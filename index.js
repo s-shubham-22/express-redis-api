@@ -3,10 +3,8 @@ const app = express()
 const PORT = 3000
 const Redis = require('redis')
 const client = Redis.createClient()
-const cors = require('cors')
 
 app.use(express.json())
-app.use(cors())
 app.use(express.urlencoded({ extended: false }))
 
 client.connect().then(() => {
